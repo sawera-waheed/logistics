@@ -8,6 +8,8 @@ import {
   CardContent,
   TextField,
   Button,
+  Input,
+  Checkbox,
 } from "@mui/material";
 import React from "react";
 import { styled } from "@mui/material/styles";
@@ -28,28 +30,39 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { TbArrowNarrowDown, TbArrowNarrowUp } from "react-icons/tb";
 
 const Tracking = () => {
   const handleTracking = () => {};
-  const codes = [
-    {
-      value: "23Za",
-      label: "23Za",
-    },
-    {
-      value: "22G5",
-      label: "22G5",
-    },
-    {
-      value: "33Bu",
-      label: "33Bu",
-    },
-  ];
+const codes = [
+  {
+    value: "23Za",
+    label: "23Za",
+  },
+  {
+    value: "22G5",
+    label: "22G5",
+  },
+  {
+    value: "33Bu",
+    label: "33Bu",
+  },
+];
+  const [table, setTable] = useState(false);
+  const [flight, setFlight] = useState("");
+  const handleChange = (event) => {
+    setFlight(event.target.value);
+  };
+  const handleSearch = () => {
+    setTable(true);
+  };
   return (
     <MyProSidebarProvider>
       <div style={{ height: "100%", width: "100%" }}>
         <main>
-          <Box sx={{ marginTop: "20px" }}>
+          <Box
+            sx={{ margin: "20px", background: "#fff", borderRadius: "15px" }}
+          >
             <Navbar />
           </Box>
           <Container>
@@ -61,16 +74,38 @@ const Tracking = () => {
                 lg={12}
                 sx={{ textAlign: "center", height: "50%" }}
               >
-                <img
-                  src="https://img.freepik.com/premium-vector/cargo-logistics-truck-transportation-container-ship-with-working-crane-import-export-transport-industry_327176-212.jpg?w=740"
-                  height="80%"
-                ></img>
-                <Typography sx={{ fontWeight: "bold", size: "20px" }}>
-                  Tracking
-                </Typography>
+                <Box
+                  sx={{
+                    width: "100%",
+                    borderRadius: "15px",
+                    backgroundColor: "#fff",
+                  }}
+                >
+                  <img
+                    src="https://img.freepik.com/premium-vector/global-transportation-system-abstract-concept-vector-illustration_107173-31150.jpg?w=740"
+                    height="80%"
+                  ></img>
+                </Box>
               </Grid>
-              <Grid item sm={12} md={12} lg={12} sx={{}}>
-                <Card sx={{ width: "80%", marginLeft: "10%" }}>
+              <Grid item sm={12} md={12} lg={12}>
+                <Box
+                  sx={{
+                    backgroundColor: "#fff",
+                    borderRadius: "15px",
+                    padding: "50px",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: "50px",
+                      textAlign: "center",
+                      color: "#00254d",
+                    }}
+                  >
+                    Tracking
+                  </Typography>
+                  <Card sx={{ width: "80%", marginLeft: "10%" }}>
                   <CardContent>
                     <Typography>Enter Tracking Number</Typography>
                     <Grid container spacing={2}>
@@ -127,7 +162,9 @@ const Tracking = () => {
                     </Grid>
                   </CardContent>
                 </Card>
+                </Box>
               </Grid>
+             
             </Grid>
           </Container>
         </main>

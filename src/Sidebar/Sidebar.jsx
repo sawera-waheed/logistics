@@ -221,7 +221,7 @@ const MyProSidebar = () => {
       sx={{
         position: "sticky",
         display: "flex",
-        height: "100vh",
+        height: "95vh",
         top: 0,
         backgroundColor: "#000",
         bottom: 0,
@@ -256,44 +256,8 @@ const MyProSidebar = () => {
         backgroundColor={"#00254d"}
         image={sidebarImage}
       >
-        <Menu iconshape="square">
-          <MenuItem
-            icon={
-              collapsed ? (
-                <MenuOutlinedIcon onClick={() => collapseSidebar()} />
-              ) : (
-                ""
-              )
-            }
-            style={{
-              margin: "10px 0 20px 0",
-              color: "#fff",
-            }}
-          >
-            {!collapsed && (
-              <Box
-                display="flex"
-                justifyContent="space-between"
-                alignItems="center"
-                ml="15px"
-                sx={{backgroundColor:"transparent"}}
-              >
-                
-
-                <IconButton
-                  onClick={
-                    broken ? () => toggleSidebar() : () => collapseSidebar()
-                  } 
-                  sx={{color: "#fff"}}
-                >
-                  <CloseOutlinedIcon  color="#fff"/>
-                </IconButton>
-              </Box>
-            )}
-          </MenuItem>
-        
-
-          <Box paddingLeft={collapsed ? undefined : "10%"}>
+         <Menu iconshape="square">
+          <Box paddingLeft={"10px"} sx={{marginTop: "50px"}}>
           <Item
               title="Tracking"
               to="/tracking"
@@ -325,7 +289,7 @@ const MyProSidebar = () => {
               setSelected={setSelected}
             />
           </Box>
-        </Menu>
+        </Menu> 
       </Sidebar>
     </Box>
   );

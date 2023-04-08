@@ -14,31 +14,10 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { useNavigate } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import bg from "../../assets/Images/bg.png"
-
-function Copyright(props) {
- 
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="#">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
-
-const theme = createTheme();
+import bg from "../../assets/Images/bg.png";
 
 //  export default function
-const SignInSide = () => { 
+const SignInSide = () => {
   const navigate = useNavigate();
 
   const [msg, setMsg] = useState(""); // state to print message
@@ -47,10 +26,7 @@ const SignInSide = () => {
     email: "",
     password: "",
   });
- useEffect(()=>{
- 
- })
-
+  useEffect(() => {});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -62,21 +38,27 @@ const SignInSide = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    navigate("/seasolutions")
-    
-    
+    navigate("/seasolutions");
   };
- const handleSignUp = ()=>{
-  navigate("/signup")
- }
- const handleForgetPass =()=>{
-  navigate("#")
- }
+  const handleSignUp = () => {
+    navigate("/signup");
+  };
+  const handleForgetPass = () => {
+    navigate("#");
+  };
   return (
-    <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: "100vh" }}>
-        <CssBaseline />
-        <Grid
+    // <ThemeProvider theme={theme}>
+    <Grid
+      container
+      sx={{
+        height: "100vh",
+        backgroundImage: `url("https://img.freepik.com/free-photo/grunge-paint-background_1409-1337.jpg")`,
+        backgroundRepeat: "none",
+        backgroundSize: "cover",
+      }}
+    >
+      <CssBaseline />
+      {/* <Grid
           item
           xs={false}
           sm={4}
@@ -87,87 +69,101 @@ const SignInSide = () => {
             backgroundSize: "cover",
             
           }}
-        />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <Box
-            sx={{
-              my: 5,
-              mx: 4,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Avatar sx={{ m: 1, bgcolor: "#0000ff" }}>
-              <LockOutlinedIcon />
-            </Avatar>
-            <Typography component="h1" variant="h5">
-              Sign in
-            </Typography>
-            {msg ? (
-              <Box sx={{ mt: 1 }}>
-                <Typography sx={{ color: `${err ? "#FF0000" : "#2e8548"}` }}>
-                  {" "}
-                  {msg}
-                </Typography>
-              </Box>
-            ) : (
-              ""
-            )}
-            <Box
-              component="form"
-              noValidate
-              onSubmit={handleSubmit}
-              sx={{ mt: 1 }}
-            >
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-                value={user.email}
-                onChange={handleChange}
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-                value={user.password}
-                onChange={handleChange}
-              />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                Sign In
-              </Button>
-              <Grid container>
-                <Grid item xs>
-                <Button  onClick= {handleForgetPass} sx={{textTransform: "none"}}>
-                    {"Forget Password"}
-                  </Button>
-                </Grid>
-              </Grid>
-              <Copyright sx={{ mt: 5 }} />
+        /> */}
+      <Grid
+        item
+        xs={12}
+        sm={12}
+        md={12}
+        sx={{ display: "flex", justifyContent: "center" }}
+      >
+        <Box
+          sx={{
+            borderRadius: "15px",
+            my: 8,
+            mx: 4,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            background: "#fff",
+            width: "40%",
+            padding: "30px",
+            height: "400px",
+          }}
+        >
+          <Typography component="h1" variant="h5">
+            Sign in
+          </Typography>
+          {msg ? (
+            <Box sx={{ mt: 1 }}>
+              <Typography sx={{ color: `${err ? "#FF0000" : "#2e8548"}` }}>
+                {" "}
+                {msg}
+              </Typography>
             </Box>
+          ) : (
+            ""
+          )}
+          <Box
+            component="form"
+            noValidate
+            onSubmit={handleSubmit}
+            sx={{ mt: 1 }}
+          >
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              value={user.email}
+              onChange={handleChange}
+            />
+            <br />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              value={user.password}
+              onChange={handleChange}
+            />
+            <br />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <Button
+            fullWidth
+              onClick={handleSubmit}
+              sx={{
+                marginTop: "50px",
+                textTransform: "none",
+                borderRadius: "10px",
+                background: "#00254d",
+                color: "#fff",
+                height: "40px",
+                padding: "10px 20px 10px 20px",
+                "&:hover": {
+                  background: "#00254d",
+                  color: "#fff",
+                },
+              }}
+            >
+              Login
+            </Button>
+            
           </Box>
-        </Grid>
+        </Box>
       </Grid>
-    </ThemeProvider>
+    </Grid>
+    // </ThemeProvider>
   );
 };
 export { SignInSide };
