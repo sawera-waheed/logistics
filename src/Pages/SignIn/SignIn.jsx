@@ -14,7 +14,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { useNavigate } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import bg from "../../assets/Images/bg.png";
+import logo from "../../assets/Images/logo.png";
 
 //  export default function
 const SignInSide = () => {
@@ -51,10 +51,13 @@ const SignInSide = () => {
     <Grid
       container
       sx={{
+        display: "flex",
+        alignItems: "center",
         height: "100vh",
-        backgroundImage: `url("https://img.freepik.com/free-photo/grunge-paint-background_1409-1337.jpg")`,
+        backgroundImage: `url("https://steptodown.com/istock-downloader/images/steptodown.com325151.jpg")`,
         backgroundRepeat: "none",
         backgroundSize: "cover",
+        
       }}
     >
       <CssBaseline />
@@ -85,15 +88,14 @@ const SignInSide = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            background: "#fff",
+            background: "#ffffffeb",
             width: "40%",
             padding: "30px",
-            height: "400px",
+            height: "500px",
           }}
         >
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
+          <img src={logo} height="100px"></img>
+          
           {msg ? (
             <Box sx={{ mt: 1 }}>
               <Typography sx={{ color: `${err ? "#FF0000" : "#2e8548"}` }}>
@@ -140,7 +142,7 @@ const SignInSide = () => {
               label="Remember me"
             />
             <Button
-            fullWidth
+              fullWidth
               onClick={handleSubmit}
               sx={{
                 marginTop: "50px",
@@ -158,7 +160,6 @@ const SignInSide = () => {
             >
               Login
             </Button>
-            
           </Box>
         </Box>
       </Grid>

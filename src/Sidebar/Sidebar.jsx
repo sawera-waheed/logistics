@@ -257,7 +257,12 @@ const MyProSidebar = () => {
         image={sidebarImage}
       >
          <Menu iconshape="square">
-          <Box paddingLeft={"10px"} sx={{marginTop: "50px"}}>
+          <Box paddingLeft={"10px"} sx={{marginTop: "20px"}}>
+            <Box sx={{color:"#fff", mb: "20px" , ml: "10px"}}>
+            <Typography sx={{fontSize: "30px", fontWeight: "bold"}}>LCT</Typography>
+            <Typography sx={{fontSize: "12px"}}>Tracker And Solutions</Typography>
+            </Box>
+            
           <Item
               title="Tracking"
               to="/tracking"

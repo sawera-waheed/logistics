@@ -77,13 +77,13 @@ const rows = [
   createData(
     <img
       src={
-        "https://images.unsplash.com/photo-1680925697894-106c453c6e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+        "https://i.pinimg.com/originals/0e/35/61/0e35618c3b42ebf0eef8312bea410279.png"
       }
       height="20px"
       width="20px"
       style={{ borderRadius: "50%", marginRight: "20px" }}
     ></img>,
-    "PTA",
+    "PIA",
     "unknown",
     "Dubai",
     "PIA",
@@ -94,13 +94,48 @@ const rows = [
   createData(
     <img
       src={
-        "https://images.unsplash.com/photo-1680925697894-106c453c6e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Etihad-airways-logo.svg/1200px-Etihad-airways-logo.svg.png"
       }
       height="20px"
       width="20px"
       style={{ borderRadius: "50%", marginRight: "20px" }}
     ></img>,
-    "PTA",
+    "Itahad",
+    "unknown",
+    "Dubai",
+    "Itahad",
+    "2:00 pm",
+    "2:00 am",
+    "Unknown"
+  ),
+  createData(
+    <img
+      src={
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/850px-Emirates_logo.svg.png"
+      }
+      height="20px"
+      width="20px"
+      style={{ borderRadius: "50%", marginRight: "20px" }}
+    ></img>,
+    "Emirates",
+    "unknown",
+    "Dubai",
+    "Emirates",
+    "2:00 pm",
+    "2:00 am",
+    "Unknown"
+  ),
+
+  createData(
+    <img
+      src={
+        "https://i.pinimg.com/originals/0e/35/61/0e35618c3b42ebf0eef8312bea410279.png"
+      }
+      height="20px"
+      width="20px"
+      style={{ borderRadius: "50%", marginRight: "20px" }}
+    ></img>,
+    "PIA",
     "unknown",
     "Dubai",
     "PIA",
@@ -111,16 +146,16 @@ const rows = [
   createData(
     <img
       src={
-        "https://images.unsplash.com/photo-1680925697894-106c453c6e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Etihad-airways-logo.svg/1200px-Etihad-airways-logo.svg.png"
       }
       height="20px"
       width="20px"
       style={{ borderRadius: "50%", marginRight: "20px" }}
     ></img>,
-    "PTA",
+    "Itahad",
     "unknown",
     "Dubai",
-    "PIA",
+    "Itahad",
     "2:00 pm",
     "2:00 am",
     "Unknown"
@@ -128,50 +163,16 @@ const rows = [
   createData(
     <img
       src={
-        "https://images.unsplash.com/photo-1680925697894-106c453c6e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/850px-Emirates_logo.svg.png"
       }
       height="20px"
       width="20px"
       style={{ borderRadius: "50%", marginRight: "20px" }}
     ></img>,
-    "PTA",
+    "Emirates",
     "unknown",
     "Dubai",
-    "PIA",
-    "2:00 pm",
-    "2:00 am",
-    "Unknown"
-  ),
-  createData(
-    <img
-      src={
-        "https://images.unsplash.com/photo-1680925697894-106c453c6e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-      }
-      height="20px"
-      width="20px"
-      style={{ borderRadius: "50%", marginRight: "20px" }}
-    ></img>,
-    "PTA",
-    "unknown",
-    "Dubai",
-    "PIA",
-    "2:00 pm",
-    "2:00 am",
-    "Unknown"
-  ),
-  createData(
-    <img
-      src={
-        "https://images.unsplash.com/photo-1680925697894-106c453c6e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-      }
-      height="20px"
-      width="20px"
-      style={{ borderRadius: "50%", marginRight: "20px" }}
-    ></img>,
-    "PTA",
-    "unknown",
-    "Dubai",
-    "PIA",
+    "Emirates",
     "2:00 pm",
     "2:00 am",
     "Unknown"
@@ -232,46 +233,33 @@ const AirSolutions = () => {
           </Box>
           <Container>
             <Grid container spacing={2}>
-              <Grid
-                item
-                sm={12}
-                md={12}
-                lg={12}
-                sx={{ textAlign: "center", height: "50%" }}
-              >
+              <Grid item sm={12} md={12} lg={12} sx={{ height: "50%" }}>
                 <Box
                   sx={{
+                    padding: "30px",
                     width: "100%",
                     borderRadius: "15px",
                     backgroundColor: "#fff",
                   }}
                 >
-                  <img
-                    src="https://img.freepik.com/free-vector/warehouse-workers-loading-boxes-into-airplane-cargo-aircraft-international-freight-flat-vector-illustration-global-logistic-transportation-delivery-concept-banner-landing-web-page_74855-26132.jpg?w=740&t=st=1680984696~exp=1680985296~hmac=72ff607b8399bbd2e8884c46c69175e1238f948abd36676c10f3fb3d45fc2254"
-                    height="80%"
-                  ></img>
-                </Box>
-              </Grid>
-              <Grid item sm={12} md={12} lg={12}>
-                <Box
-                  sx={{
-                    backgroundColor: "#fff",
-                    borderRadius: "15px",
-                    padding: "50px",
-                  }}
-                >
                   <Typography
                     sx={{
-                      fontWeight: "bold",
-                      fontSize: "50px",
+                      fontSize: "30px",
                       textAlign: "center",
                       color: "#00254d",
                     }}
                   >
                     Air Solutions
                   </Typography>
+                  <Box sx={{ display: "flex", justifyContent: "center" }}>
+                    <img
+                      src="https://img.freepik.com/free-vector/warehouse-workers-loading-boxes-into-airplane-cargo-aircraft-international-freight-flat-vector-illustration-global-logistic-transportation-delivery-concept-banner-landing-web-page_74855-26132.jpg?w=740&t=st=1680984696~exp=1680985296~hmac=72ff607b8399bbd2e8884c46c69175e1238f948abd36676c10f3fb3d45fc2254"
+                      height="300px"
+                    ></img>
+                  </Box>
                   <Card
                     sx={{
+                      marginTop: "10px",
                       width: "80%",
                       marginLeft: "10%",
                       borderRadius: "10px",
@@ -306,9 +294,9 @@ const AirSolutions = () => {
                               }}
                             ></Input>
                             <Typography
-                              sx={{ margin: "10px", color: "#A8A8A8" }}
+                              sx={{ margin: "0px", color: "#A8A8A8" }}
                             >
-                              Port or Country
+                              Origin Country
                             </Typography>
                           </Box>
                           <Typography sx={{ mt: "10px" }}>To:</Typography>
@@ -334,9 +322,9 @@ const AirSolutions = () => {
                               }}
                             ></Input>
                             <Typography
-                              sx={{ margin: "10px", color: "#A8A8A8" }}
+                              sx={{ margin: "0px", color: "#A8A8A8" }}
                             >
-                              Port or Country
+                              Destination Country
                             </Typography>
                           </Box>
                           <Typography sx={{ mt: "10px" }}>On:</Typography>
@@ -398,34 +386,13 @@ const AirSolutions = () => {
                             Submit
                           </Button>
                         </Grid>
-                        <Grid
-                          item
-                          sm={12}
-                          md={1}
-                          lg={1}
-                          sx={{ paddingTop: "100%" }}
-                        >
-                          <Box
-                            sx={{
-                              backgroundColor: "#00254d",
-                              borderRadius: "50%",
-                              display: { sm: "none", md: "flex" },
-                              height: "30px",
-                              width: "30px",
-                              padding: "10px",
-                              alignItems: "center",
-                              marginTop: "130px",
-                            }}
-                          >
-                            <TbArrowNarrowDown size="20px" color="#fff" />
-                            <TbArrowNarrowUp size="20px" color="#fff" />
-                          </Box>
-                        </Grid>
+                        <Grid item sm={12} md={1} lg={1}></Grid>
                       </Grid>
                     </CardContent>
                   </Card>
                 </Box>
               </Grid>
+
               {table ? (
                 <Grid
                   container

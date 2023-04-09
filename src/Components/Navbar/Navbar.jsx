@@ -1,5 +1,6 @@
 import {
   AppBar,
+  Box,
   Container,
   Grid,
   Typography,
@@ -10,7 +11,10 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { ArrowDropDown, SettingsOutlined } from "@mui/icons-material";
+import logo from "../../assets/Images/logoheader.png";
+import { useNavigate } from "react-router-dom";
 const Navbar = () => {
+  const navigate= useNavigate()
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -19,7 +23,10 @@ const Navbar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
+   const handleSetting=()=>{
+    navigate("/setting")
+    setAnchorEl(null);
+   }
   return (
     <Container
       maxWidth="100%"
@@ -27,14 +34,28 @@ const Navbar = () => {
     >
       <Grid container spacing={2}>
         <Grid item sm={6} md={4} lg={4}>
-          <Typography
+          {/* <Typography
             sx={{ color: "#000", size: "20px", fontWeight: "bold", mt: "10px" }}
           >
             LCT Tracker and Solution
-          </Typography>
+          </Typography> */}
         </Grid>
-        <Grid item sm={1} md={4} lg={4}></Grid>
-        <Grid item sm={5} md={4} lg={4} sx={{display: "flex" , justifyContent: "right", paddingBottom: "30px"}}>
+        <Grid item sm={1} md={4} lg={4}>
+          <Box sx={{display: "flex", justifyContent: "center"}}>
+            <img src={logo} height="50px" />
+          </Box>
+        </Grid>
+        <Grid
+          item
+          sm={5}
+          md={4}
+          lg={4}
+          sx={{
+            display: "flex",
+            justifyContent: "right",
+            paddingBottom: "30px",
+          }}
+        >
           <IconButton
             id="basic-button"
             aria-controls={open ? "basic-menu" : undefined}
@@ -66,8 +87,9 @@ const Navbar = () => {
             }}
           >
             <MenuItem onClick={handleClose}>Profile</MenuItem>
+           
+            <MenuItem onClick={handleSetting}>Settings</MenuItem>
             <MenuItem onClick={handleClose}>Logout</MenuItem>
-            <MenuItem onClick={handleClose}>Settings</MenuItem>
           </Menu>
         </Grid>
       </Grid>

@@ -91,7 +91,7 @@ const rows = [
     "TRANSHIPMENT",
     "Unknown"
   ),
- createData(
+  createData(
     <img
       src={
         "https://images.unsplash.com/photo-1680925697894-106c453c6e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
@@ -108,7 +108,7 @@ const rows = [
     "TRANSHIPMENT",
     "Unknown"
   ),
- createData(
+  createData(
     <img
       src={
         "https://images.unsplash.com/photo-1680925697894-106c453c6e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
@@ -125,7 +125,7 @@ const rows = [
     "TRANSHIPMENT",
     "Unknown"
   ),
- createData(
+  createData(
     <img
       src={
         "https://images.unsplash.com/photo-1680925697894-106c453c6e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
@@ -142,7 +142,7 @@ const rows = [
     "TRANSHIPMENT",
     "Unknown"
   ),
- createData(
+  createData(
     <img
       src={
         "https://images.unsplash.com/photo-1680925697894-106c453c6e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
@@ -159,7 +159,7 @@ const rows = [
     "TRANSHIPMENT",
     "Unknown"
   ),
- createData(
+  createData(
     <img
       src={
         "https://images.unsplash.com/photo-1680925697894-106c453c6e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
@@ -232,46 +232,33 @@ const SeaSolutions = () => {
           </Box>
           <Container>
             <Grid container spacing={2}>
-              <Grid
-                item
-                sm={12}
-                md={12}
-                lg={12}
-                sx={{ textAlign: "center", height: "50%" }}
-              >
+              <Grid item sm={12} md={12} lg={12} sx={{ height: "50%" }}>
                 <Box
                   sx={{
+                    padding: "30px",
                     width: "100%",
                     borderRadius: "15px",
                     backgroundColor: "#fff",
                   }}
                 >
-                  <img
-                    src="https://img.freepik.com/premium-vector/cargo-logistics-truck-transportation-container-ship-with-working-crane-import-export-transport-industry_327176-212.jpg?w=740"
-                    height="80%"
-                  ></img>
-                </Box>
-              </Grid>
-              <Grid item sm={12} md={12} lg={12}>
-                <Box
-                  sx={{
-                    backgroundColor: "#fff",
-                    borderRadius: "15px",
-                    padding: "50px",
-                  }}
-                >
                   <Typography
                     sx={{
-                      fontWeight: "bold",
-                      fontSize: "50px",
+                      fontSize: "30px",
                       textAlign: "center",
                       color: "#00254d",
                     }}
                   >
                     Sea Solutions
                   </Typography>
+                  <Box sx={{ display: "flex", justifyContent: "center" }}>
+                    <img
+                      src="https://img.freepik.com/premium-vector/cargo-logistics-truck-transportation-container-ship-with-working-crane-import-export-transport-industry_327176-212.jpg?w=740"
+                      height="300px"
+                    ></img>
+                  </Box>
                   <Card
                     sx={{
+                      marginTop: "5px",
                       width: "80%",
                       marginLeft: "10%",
                       borderRadius: "10px",
@@ -308,7 +295,7 @@ const SeaSolutions = () => {
                             <Typography
                               sx={{ margin: "10px", color: "#A8A8A8" }}
                             >
-                              Port or Country
+                              Port of Origin Country
                             </Typography>
                           </Box>
                           <Typography sx={{ mt: "10px" }}>To:</Typography>
@@ -336,7 +323,7 @@ const SeaSolutions = () => {
                             <Typography
                               sx={{ margin: "10px", color: "#A8A8A8" }}
                             >
-                              Port or Country
+                              Port of Destination Country
                             </Typography>
                           </Box>
                           <Typography sx={{ mt: "10px" }}>On:</Typography>
@@ -398,17 +385,21 @@ const SeaSolutions = () => {
                             Search
                           </Button>
                         </Grid>
-                        <Grid item sm={12} md={1} lg={1}sx={{paddingTop: "100%"}}>
-                          <Box sx={{ backgroundColor: "#00254d" , borderRadius: "50%" , display:{sm: "none", md:"flex"} , height: "30px" , width: "30px" , padding: "10px" , alignItems: "center" , marginTop: "130px"}}>
-                            <TbArrowNarrowDown size="20px" color="#fff"/>
-                            <TbArrowNarrowUp size="20px" color="#fff"/>
-                          </Box>
+                        <Grid
+                          item
+                          sm={12}
+                          md={1}
+                          lg={1}
+                          
+                        >
+                          
                         </Grid>
                       </Grid>
                     </CardContent>
                   </Card>
                 </Box>
               </Grid>
+      
               {table ? (
                 <Grid
                   container
@@ -433,21 +424,20 @@ const SeaSolutions = () => {
                           <TableRow>
                             <StyledTableCell>Port of Load</StyledTableCell>
                             <StyledTableCell align="left">
-                             Port of Discharge
+                              Port of Discharge
                             </StyledTableCell>
                             <StyledTableCell align="left">
                               Transit Time
                             </StyledTableCell>
                             <StyledTableCell align="left">
-                             Next Departure
+                              Next Departure
                             </StyledTableCell>
                             <StyledTableCell align="left">
                               Service
                             </StyledTableCell>
                             <StyledTableCell align="left">
-                             Routing Type
+                              Routing Type
                             </StyledTableCell>
-                            
                           </TableRow>
                         </TableHead>
                         <TableBody>
@@ -455,7 +445,6 @@ const SeaSolutions = () => {
                             <StyledTableRow key={row.Carrier}>
                               <StyledTableCell component="th" scope="row">
                                 <Box sx={{ display: "flex" }}>
-                                 
                                   {row.Carrier}
                                 </Box>
                               </StyledTableCell>
@@ -474,7 +463,6 @@ const SeaSolutions = () => {
                               <StyledTableCell align="center">
                                 {row.Arival}
                               </StyledTableCell>
-                              
                             </StyledTableRow>
                           ))}
                         </TableBody>

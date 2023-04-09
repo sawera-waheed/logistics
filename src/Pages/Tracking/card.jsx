@@ -15,13 +15,7 @@ const codes = [
 ];
 
 
-sx={{
-    width: "80%",
-    marginLeft: "10%",
-    borderRadius: "10px",
-    padding: "20px",
-    boxShadow: "0px 0px 15px 2px #00000028",
-  }}
+
 <Card sx={{ width: "80%", marginLeft: "10%" }}>
                   <CardContent>
                     <Typography>Enter Tracking Number</Typography>
