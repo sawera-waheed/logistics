@@ -276,7 +276,7 @@ const AirSolutions = () => {
                             sx={{
                               backgroundColor: "#EDEDED",
                               borderRadius: "10px",
-                              padding: "10px",
+                              padding: "0px 10px 0px 10px",
                               marginTop: "5px",
                             }}
                           >
@@ -288,13 +288,13 @@ const AirSolutions = () => {
                               inputProps={{
                                 style: {
                                   borderRadius: "10px",
-                                  padding: "10px",
+                                  padding: "5px 10px 0px 10px",
                                   backgroundColor: "#EDEDED",
                                 },
                               }}
                             ></Input>
                             <Typography
-                              sx={{ margin: "0px", color: "#A8A8A8" }}
+                              sx={{  color: "#A8A8A8" , ml: "10px" }}
                             >
                               Origin Country
                             </Typography>
@@ -304,7 +304,7 @@ const AirSolutions = () => {
                             sx={{
                               backgroundColor: "#EDEDED",
                               borderRadius: "10px",
-                              padding: "10px",
+                              padding: "0px 10px 0px 10px",
                               marginTop: "5px",
                             }}
                           >
@@ -316,13 +316,13 @@ const AirSolutions = () => {
                               inputProps={{
                                 style: {
                                   borderRadius: "10px",
-                                  padding: "10px",
+                                  padding: "5px 10px 0px 10px",
                                   backgroundColor: "#EDEDED",
                                 },
                               }}
                             ></Input>
                             <Typography
-                              sx={{ margin: "0px", color: "#A8A8A8" }}
+                              sx={{ ml: "10px" , color: "#A8A8A8" }}
                             >
                               Destination Country
                             </Typography>

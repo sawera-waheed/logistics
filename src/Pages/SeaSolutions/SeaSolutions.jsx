@@ -264,7 +264,7 @@ const SeaSolutions = () => {
                             sx={{
                               backgroundColor: "#EDEDED",
                               borderRadius: "10px",
-                              padding: "10px",
+                              padding: "0px 10px 0px 10px",
                               marginTop: "5px",
                             }}
                           >
@@ -276,12 +276,12 @@ const SeaSolutions = () => {
                               inputProps={{
                                 style: {
                                   borderRadius: "10px",
-                                  padding: "10px",
+                                  padding: "5px 10px 0px 10px",
                                   backgroundColor: "#EDEDED",
                                 },
                               }}
                             ></Input>
-                            <Typography sx={{ color: "#A8A8A8" }}>
+                            <Typography sx={{ color: "#A8A8A8", ml: "10px"  }}>
                               Port of Origin Country
                             </Typography>
                           </Box>
@@ -292,7 +292,7 @@ const SeaSolutions = () => {
                             sx={{
                               backgroundColor: "#EDEDED",
                               borderRadius: "10px",
-                              padding: "10px",
+                              padding: "0px 10px 0px 10px",
                               marginTop: "5px",
                             }}
                           >
@@ -304,12 +304,12 @@ const SeaSolutions = () => {
                               inputProps={{
                                 style: {
                                   borderRadius: "10px",
-                                  padding: "10px",
+                                  padding: "5px 10px 0px 10px",
                                   backgroundColor: "#EDEDED",
                                 },
                               }}
                             ></Input>
-                            <Typography sx={{ color: "#A8A8A8" }}>
+                            <Typography sx={{ color: "#A8A8A8", ml: "10px" }}>
                               Port of Destination Country
                             </Typography>
                           </Box>
@@ -374,10 +374,7 @@ const SeaSolutions = () => {
                                   m: "0px 10px 10px 0px",
                                 }}
                                 renderInput={(params) => (
-                                  <TextField
-                                    {...params}
-                                    label="Next"
-                                  />
+                                  <TextField {...params} label="Next" />
                                 )}
                               />
                             </Grid>

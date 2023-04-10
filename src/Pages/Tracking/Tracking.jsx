@@ -199,10 +199,10 @@ const Tracking = () => {
                                 margin="normal"
                                 required
                                 fullWidth
-                                name="Number"
-                                label="Tracking Number"
+                                name="billNo"
+                                label="B/L No Or Container No"
                                 type="text"
-                                id="Trackingnumber"
+                                id="billNo"
                               />
                             </Grid>
                             <Grid item sm={12} md={4} lg={4}>
