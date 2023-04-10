@@ -10,6 +10,7 @@ import {
   Button,
   Input,
   Checkbox,
+  Autocomplete,
 } from "@mui/material";
 import React from "react";
 import { styled } from "@mui/material/styles";
@@ -177,56 +178,32 @@ const rows = [
     "Unknown"
   ),
 ];
-const CssTextField = styled(TextField)({
-  maxHeight: "50px",
-  margin: "0px 10px 0px 10px ",
-  "& label": {
-    display: "none",
-  },
-  "& label.Mui-focused": {
-    display: "none",
-    color: "black",
-    borderRadius: "15px",
-    maxHeight: "50px",
-  },
-  "& .MuiInput-underline:after": {
-    borderBottomColor: "black",
-    borderRadius: "15px",
-    maxHeight: "50px",
-  },
-  "& .MuiOutlinedInput-root": {
-    "& fieldset": {
-      borderColor: "black",
-      borderRadius: "15px",
-      maxHeight: "50px",
-    },
-    "&:hover fieldset": {
-      borderColor: "black",
-      borderRadius: "15px",
-      maxHeight: "50px",
-    },
-    "&.Mui-focused fieldset": {
-      borderColor: "black",
-      borderRadius: "15px",
-      maxHeight: "50px",
-    },
-  },
-});
 const SeaSolutions = () => {
   const [table, setTable] = useState(false);
-  const [flight, setFlight] = useState("");
+  const [flight, setFlight] = useState();
+  const [combobox, setCombobox] = useState("");
   const handleChange = (event) => {
     setFlight(event.target.value);
   };
   const handleSearch = () => {
     setTable(true);
   };
+  const durations = [
+    { label: "1 Week", value: "1Week" },
+    { label: "2 Weeks", value: "2Weeks" },
+    { label: "3 Weeks", value: "3Weeks" },
+    { label: "4 Weeks", value: "4Weeks" },
+  ];
+  const handleComboValue = (e, value) => {
+    console.log(value);
+    setCombobox(value);
+  };
   return (
     <MyProSidebarProvider>
       <div style={{ height: "100%", width: "100%" }}>
         <main>
           <Box
-            sx={{ margin: "20px", background: "#fff", borderRadius: "15px" }}
+            sx={{ margin: "20px", background: "#fff", borderRadius: "10px" }}
           >
             <Navbar />
           </Box>
@@ -237,7 +214,7 @@ const SeaSolutions = () => {
                   sx={{
                     padding: "30px",
                     width: "100%",
-                    borderRadius: "15px",
+                    borderRadius: "10px",
                     backgroundColor: "#fff",
                   }}
                 >
@@ -270,7 +247,7 @@ const SeaSolutions = () => {
                       <Grid container spacing={2}>
                         <Grid item sm={12} md={1} lg={1}></Grid>
                         <Grid item sm={12} md={10} lg={10}>
-                          <Typography>From</Typography>
+                          <Typography>Origin</Typography>
                           <Box
                             sx={{
                               backgroundColor: "#EDEDED",
@@ -292,13 +269,13 @@ const SeaSolutions = () => {
                                 },
                               }}
                             ></Input>
-                            <Typography
-                              sx={{ margin: "10px", color: "#A8A8A8" }}
-                            >
+                            <Typography sx={{ color: "#A8A8A8" }}>
                               Port of Origin Country
                             </Typography>
                           </Box>
-                          <Typography sx={{ mt: "10px" }}>To:</Typography>
+                          <Typography sx={{ mt: "10px" }}>
+                            Destination:
+                          </Typography>
                           <Box
                             sx={{
                               backgroundColor: "#EDEDED",
@@ -320,9 +297,7 @@ const SeaSolutions = () => {
                                 },
                               }}
                             ></Input>
-                            <Typography
-                              sx={{ margin: "10px", color: "#A8A8A8" }}
-                            >
+                            <Typography sx={{ color: "#A8A8A8" }}>
                               Port of Destination Country
                             </Typography>
                           </Box>
@@ -342,7 +317,61 @@ const SeaSolutions = () => {
                                 </LocalizationProvider>
                               </Box>
                             </Grid>
-                            <Grid item sm={12} md={8} lg={8}>
+                            <Grid item sm={12} md={4} lg={4}>
+                              <Autocomplete
+                                disablePortal
+                                id="combo-box-demo"
+                                options={durations}
+                                onChange={handleComboValue}
+                                value={combobox}
+                                sx={{
+                                  "& label.Mui-focused": {
+                                    // borderColor: "#000",
+                                    // borderRadius: "15px",
+                                    // border: "2px solid #0000002b",
+
+                                    color: "#000",
+                                  },
+                                  "& .MuiInput-underline:after": {
+                                    borderColor: "#000",
+                                    // borderColor: "#000",
+                                    borderRadius: "15px",
+                                    border: "2px solid #0000002b",
+                                  },
+                                  "& .MuiOutlinedInput-root": {
+                                    "& fieldset": {
+                                   
+                                      borderColor: "#000",
+                                      borderRadius: "15px",
+                                      // border: "2px solid #0000002b",
+                                      border: "2px solid #0000002b",
+                                    },
+                                    "&:hover fieldset": {
+                                      borderColor: "#000",
+                                      borderRadius: "15px",
+                                      border: "2px solid #0000002b",
+                                    },
+                                    "&.Mui-focused fieldset": {
+                                     
+                                      borderColor: "#000",
+                                      borderRadius: "15px",
+                                      border: "2px solid #0000002b",
+                                    },
+                                  },
+                                  borderRadius: "15px",
+                                  background: "#EDEDED",
+                                  width: "100%",
+                                  m: "0px 10px 10px 0px",
+                                }}
+                                renderInput={(params) => (
+                                  <TextField
+                                    {...params}
+                                    label="Property Type"
+                                  />
+                                )}
+                              />
+                            </Grid>
+                            <Grid item sm={12} md={4} lg={4}>
                               <Box
                                 sx={{
                                   fontFamily: "Comforta",
@@ -385,21 +414,13 @@ const SeaSolutions = () => {
                             Search
                           </Button>
                         </Grid>
-                        <Grid
-                          item
-                          sm={12}
-                          md={1}
-                          lg={1}
-                          
-                        >
-                          
-                        </Grid>
+                        <Grid item sm={12} md={1} lg={1}></Grid>
                       </Grid>
                     </CardContent>
                   </Card>
                 </Box>
               </Grid>
-      
+
               {table ? (
                 <Grid
                   container
@@ -407,7 +428,7 @@ const SeaSolutions = () => {
                   sx={{
                     backgroundColor: "#fff",
                     margin: "20px 0px 20px 20px",
-                    borderRadius: "15px",
+                    borderRadius: "10px",
                   }}
                 >
                   <Grid item sm={12} md={1} lg={1}></Grid>
