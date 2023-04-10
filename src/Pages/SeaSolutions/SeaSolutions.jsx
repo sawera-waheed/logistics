@@ -54,23 +54,23 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 function createData(
   Image,
-  Carrier,
-  Routing,
+  POL,
+  POD,
   Stops,
-  Flight,
-  Departure,
-  Arival,
-  AircraftType
+  TransitTime,
+  NextDeparture,
+  Service,
+  RoutingType
 ) {
   return {
     Image,
-    Carrier,
-    Routing,
+    POL,
+    POD,
     Stops,
-    Flight,
-    Departure,
-    Arival,
-    AircraftType,
+    TransitTime,
+    NextDeparture,
+    Service,
+    RoutingType,
   };
 }
 
@@ -84,8 +84,10 @@ const rows = [
       width="20px"
       style={{ borderRadius: "50%", marginRight: "20px" }}
     ></img>,
+
     "PORTBURY",
     "HONG KONG",
+    "Dubai , India, Pakistan",
     "30 DAYS",
     "APRIL 20 2023",
     "LION SERVICE",
@@ -101,8 +103,10 @@ const rows = [
       width="20px"
       style={{ borderRadius: "50%", marginRight: "20px" }}
     ></img>,
+
     "PORTBURY",
     "HONG KONG",
+    "Dubai , India, Pakistan",
     "30 DAYS",
     "APRIL 20 2023",
     "LION SERVICE",
@@ -118,8 +122,10 @@ const rows = [
       width="20px"
       style={{ borderRadius: "50%", marginRight: "20px" }}
     ></img>,
+
     "PORTBURY",
     "HONG KONG",
+    "Dubai , India, Pakistan",
     "30 DAYS",
     "APRIL 20 2023",
     "LION SERVICE",
@@ -135,8 +141,10 @@ const rows = [
       width="20px"
       style={{ borderRadius: "50%", marginRight: "20px" }}
     ></img>,
+
     "PORTBURY",
     "HONG KONG",
+    "Dubai , India, Pakistan",
     "30 DAYS",
     "APRIL 20 2023",
     "LION SERVICE",
@@ -152,8 +160,10 @@ const rows = [
       width="20px"
       style={{ borderRadius: "50%", marginRight: "20px" }}
     ></img>,
+
     "PORTBURY",
     "HONG KONG",
+    "Dubai , India, Pakistan",
     "30 DAYS",
     "APRIL 20 2023",
     "LION SERVICE",
@@ -169,8 +179,10 @@ const rows = [
       width="20px"
       style={{ borderRadius: "50%", marginRight: "20px" }}
     ></img>,
+
     "PORTBURY",
     "HONG KONG",
+    "Dubai , India, Pakistan",
     "30 DAYS",
     "APRIL 20 2023",
     "LION SERVICE",
@@ -340,7 +352,6 @@ const SeaSolutions = () => {
                                   },
                                   "& .MuiOutlinedInput-root": {
                                     "& fieldset": {
-                                   
                                       borderColor: "#000",
                                       borderRadius: "15px",
                                       // border: "2px solid #0000002b",
@@ -352,7 +363,6 @@ const SeaSolutions = () => {
                                       border: "2px solid #0000002b",
                                     },
                                     "&.Mui-focused fieldset": {
-                                     
                                       borderColor: "#000",
                                       borderRadius: "15px",
                                       border: "2px solid #0000002b",
@@ -366,7 +376,7 @@ const SeaSolutions = () => {
                                 renderInput={(params) => (
                                   <TextField
                                     {...params}
-                                    label="Property Type"
+                                    label="Next"
                                   />
                                 )}
                               />
@@ -448,6 +458,9 @@ const SeaSolutions = () => {
                               Port of Discharge
                             </StyledTableCell>
                             <StyledTableCell align="left">
+                              Stops
+                            </StyledTableCell>
+                            <StyledTableCell align="left">
                               Transit Time
                             </StyledTableCell>
                             <StyledTableCell align="left">
@@ -463,26 +476,27 @@ const SeaSolutions = () => {
                         </TableHead>
                         <TableBody>
                           {rows.map((row) => (
-                            <StyledTableRow key={row.Carrier}>
+                            <StyledTableRow key={row.POL}>
                               <StyledTableCell component="th" scope="row">
-                                <Box sx={{ display: "flex" }}>
-                                  {row.Carrier}
-                                </Box>
+                                <Box sx={{ display: "flex" }}>{row.POL}</Box>
                               </StyledTableCell>
                               <StyledTableCell align="center">
-                                {row.Routing}
+                                {row.POD}
                               </StyledTableCell>
                               <StyledTableCell align="center">
                                 {row.Stops}
                               </StyledTableCell>
                               <StyledTableCell align="center">
-                                {row.Flight}
+                                {row.TransitTime}
                               </StyledTableCell>
                               <StyledTableCell align="center">
-                                {row.Departure}
+                                {row.NextDeparture}
                               </StyledTableCell>
                               <StyledTableCell align="center">
-                                {row.Arival}
+                                {row.Service}
+                              </StyledTableCell>
+                              <StyledTableCell align="center">
+                                {row.RoutingType}
                               </StyledTableCell>
                             </StyledTableRow>
                           ))}
