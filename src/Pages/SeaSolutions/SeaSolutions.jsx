@@ -224,7 +224,8 @@ const SeaSolutions = () => {
               <Grid item sm={12} md={12} lg={12} sx={{ height: "50%" }}>
                 <Box
                   sx={{
-                    padding: "30px",
+                    paddingTop: "30px",
+                    paddingBottom: "30px",
                     width: "100%",
                     borderRadius: "10px",
                     backgroundColor: "#fff",
@@ -249,7 +250,7 @@ const SeaSolutions = () => {
                     sx={{
                       marginTop: "5px",
                       width: "80%",
-                      marginLeft: "10%",
+                      marginLeft: "8%",
                       borderRadius: "10px",
                       padding: "20px",
                       boxShadow: "0px 0px 15px 2px #00000028",
@@ -272,18 +273,18 @@ const SeaSolutions = () => {
                               type="text"
                               disableUnderline
                               fullWidth
+                              placeholder="Port or Origin Country"
                               label="From"
                               inputProps={{
                                 style: {
                                   borderRadius: "10px",
-                                  padding: "5px 10px 0px 10px",
+                                  margin: "10px",
+                                  padding: "10px",
                                   backgroundColor: "#EDEDED",
                                 },
                               }}
                             ></Input>
-                            <Typography sx={{ color: "#A8A8A8", ml: "10px"  }}>
-                              Port of Origin Country
-                            </Typography>
+                            
                           </Box>
                           <Typography sx={{ mt: "10px" }}>
                             Destination:
@@ -299,19 +300,19 @@ const SeaSolutions = () => {
                             <Input
                               type="text"
                               disableUnderline
+                              placeholder="Port or Destination Country"
                               fullWidth
                               label="To"
                               inputProps={{
                                 style: {
                                   borderRadius: "10px",
-                                  padding: "5px 10px 0px 10px",
+                                  margin: "10px",
+                                  padding: "10px",
                                   backgroundColor: "#EDEDED",
                                 },
                               }}
                             ></Input>
-                            <Typography sx={{ color: "#A8A8A8", ml: "10px" }}>
-                              Port of Destination Country
-                            </Typography>
+                           
                           </Box>
                           <Typography sx={{ mt: "10px" }}>On:</Typography>
                           <Grid container spacing={2}>

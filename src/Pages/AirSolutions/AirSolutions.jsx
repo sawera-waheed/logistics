@@ -236,7 +236,8 @@ const AirSolutions = () => {
               <Grid item sm={12} md={12} lg={12} sx={{ height: "50%" }}>
                 <Box
                   sx={{
-                    padding: "30px",
+                    paddingTop: "30px",
+                    paddingBottom: "30px",
                     width: "100%",
                     borderRadius: "15px",
                     backgroundColor: "#fff",
@@ -261,7 +262,7 @@ const AirSolutions = () => {
                     sx={{
                       marginTop: "10px",
                       width: "80%",
-                      marginLeft: "10%",
+                      marginLeft: "8%",
                       borderRadius: "10px",
                       padding: "20px",
                       boxShadow: "0px 0px 15px 2px #00000028",
@@ -284,20 +285,18 @@ const AirSolutions = () => {
                               type="text"
                               disableUnderline
                               fullWidth
+                              placeholder="Origin Country"
                               label="From"
                               inputProps={{
                                 style: {
                                   borderRadius: "10px",
-                                  padding: "5px 10px 0px 10px",
+                                  margin: "10px",
+                                  padding: "10px",
                                   backgroundColor: "#EDEDED",
                                 },
                               }}
                             ></Input>
-                            <Typography
-                              sx={{  color: "#A8A8A8" , ml: "10px" }}
-                            >
-                              Origin Country
-                            </Typography>
+                            
                           </Box>
                           <Typography sx={{ mt: "10px" }}>To:</Typography>
                           <Box
@@ -312,20 +311,18 @@ const AirSolutions = () => {
                               type="text"
                               disableUnderline
                               fullWidth
+                              placeholder="Destination Country"
                               label="To"
                               inputProps={{
                                 style: {
                                   borderRadius: "10px",
-                                  padding: "5px 10px 0px 10px",
+                                  margin: "10px",
+                                  padding: "10px",
                                   backgroundColor: "#EDEDED",
                                 },
                               }}
                             ></Input>
-                            <Typography
-                              sx={{ ml: "10px" , color: "#A8A8A8" }}
-                            >
-                              Destination Country
-                            </Typography>
+                            
                           </Box>
                           <Typography sx={{ mt: "10px" }}>On:</Typography>
                           <Grid container spacing={2}>

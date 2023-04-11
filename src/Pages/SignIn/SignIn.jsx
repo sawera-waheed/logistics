@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import logo from "../../assets/Images/logo.png";
-
+import bg from "../../assets/Images/bg.png"
 //  export default function
 const SignInSide = () => {
   const navigate = useNavigate();
@@ -54,7 +54,7 @@ const SignInSide = () => {
         display: "flex",
         alignItems: "center",
         height: "100vh",
-        backgroundImage: `url("https://steptodown.com/istock-downloader/images/steptodown.com325151.jpg")`,
+        backgroundImage: `url(${bg})`,
         backgroundRepeat: "none",
         backgroundSize: "cover",
         
@@ -88,7 +88,7 @@ const SignInSide = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            background: "#ffffffeb",
+            background: "#ffffffc8",
             width: "40%",
             padding: "30px",
             height: "500px",

@@ -36,7 +36,7 @@ import Select from "@mui/material/Select";
 import { TbArrowNarrowDown, TbArrowNarrowUp } from "react-icons/tb";
 
 const Tracking = () => {
-  const [selectedValue, setSelectedValue] = useState("");
+  const [selectedValue, setSelectedValue] = useState("sea");
   const handleSeaTracking = () => {};
   const handleAirTracking = () => {};
   const codes = [

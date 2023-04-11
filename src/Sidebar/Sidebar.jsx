@@ -66,7 +66,7 @@
 //       <Sidebar
 //         breakPoint="md"
 //         rtl={sidebarRTL}
-        
+
 //         image={sidebarImage}
 //         sx={{backgroundColor: "#00254d"}}
 //       >
@@ -152,7 +152,7 @@
 // export default MyProSidebar;
 // export { Item };
 
-import { useEffect, useState , useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Menu, Sidebar, MenuItem } from "react-pro-sidebar";
 import { useProSidebar } from "react-pro-sidebar";
 
@@ -172,12 +172,11 @@ import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import SwitchRightOutlinedIcon from "@mui/icons-material/SwitchRightOutlined";
 import SwitchLeftOutlinedIcon from "@mui/icons-material/SwitchLeftOutlined";
- import { BiCurrentLocation } from "react-icons/bi";
- import { GiCargoShip } from "react-icons/gi";
- import { FiSettings } from "react-icons/fi";
- import { SlPlane } from "react-icons/sl";
-const Item = ({ title, to, icon, selected, setSelected , open, setOpen }) => {
-  
+import { BiCurrentLocation } from "react-icons/bi";
+import { GiCargoShip } from "react-icons/gi";
+import { FiSettings } from "react-icons/fi";
+import { SlPlane } from "react-icons/sl";
+const Item = ({ title, to, icon, selected, setSelected, open, setOpen }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const navigate = useNavigate();
@@ -188,7 +187,7 @@ const Item = ({ title, to, icon, selected, setSelected , open, setOpen }) => {
   return (
     <MenuItem
       active={selected === title}
-      style={{ color: "#fff" , backgroundColor: "transparent"}}
+      style={{ color: "#fff", backgroundColor: "transparent" }}
       onClick={handleNavigate}
       icon={icon}
     >
@@ -196,9 +195,23 @@ const Item = ({ title, to, icon, selected, setSelected , open, setOpen }) => {
     </MenuItem>
   );
 };
-
+function Copyright(props) {
+ 
+  return (
+    <Typography
+      variant="body2"
+      color="#fff"
+      align="center"
+      {...props}
+    >
+      {"Copyright © "}
+      {"LCT "}
+      {new Date().getFullYear()}
+      {"."}
+    </Typography>
+  );
+}
 const MyProSidebar = () => {
-  
   const [open, setOpen] = useState(false);
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -207,21 +220,19 @@ const MyProSidebar = () => {
   const { sidebarRTL, setSidebarRTL, sidebarImage } = useSidebarContext();
   const { collapseSidebar, toggleSidebar, collapsed, broken } = useProSidebar();
   const childRef = useRef(null);
-  const handleOpen=()=>{
-    setOpen(true)
-  }
- const  handleClose=()=>{
-    setOpen(false)
-  }
-  useEffect(()=>{
-    
-  })
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+  useEffect(() => {});
   return (
     <Box
       sx={{
         position: "sticky",
         display: "flex",
-        height: "95vh",
+        height: "100vh",
         top: 0,
         backgroundColor: "#000",
         bottom: 0,
@@ -256,14 +267,18 @@ const MyProSidebar = () => {
         backgroundColor={"#00254d"}
         image={sidebarImage}
       >
-         <Menu iconshape="square">
-          <Box paddingLeft={"10px"} sx={{marginTop: "20px"}}>
-            <Box sx={{color:"#fff", mb: "20px" , ml: "10px"}}>
-            <Typography sx={{fontSize: "30px", fontWeight: "bold"}}>LCT</Typography>
-            <Typography sx={{fontSize: "12px"}}>Tracker And Solutions</Typography>
+        <Menu iconshape="square">
+          <Box paddingLeft={"10px"} sx={{ marginTop: "20px" }}>
+            <Box sx={{ color: "#fff", mb: "20px", ml: "10px" }}>
+              <Typography sx={{ fontSize: "30px", fontWeight: "bold" }}>
+                LCT
+              </Typography>
+              <Typography sx={{ fontSize: "12px" }}>
+                Tracker And Solutions
+              </Typography>
             </Box>
-            
-          <Item
+
+            <Item
               title="Tracking"
               to="/tracking"
               icon={<BiCurrentLocation size="25px" color="#fff" />}
@@ -294,7 +309,10 @@ const MyProSidebar = () => {
               setSelected={setSelected}
             />
           </Box>
-        </Menu> 
+        </Menu>
+        <Box sx={{position: "absolute", bottom: "10px" , left: "20px"}}>
+        <Copyright  />
+        </Box>
       </Sidebar>
     </Box>
   );
@@ -302,4 +320,3 @@ const MyProSidebar = () => {
 
 export default MyProSidebar;
 export { Item };
-
